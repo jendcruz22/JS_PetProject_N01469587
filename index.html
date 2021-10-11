@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>JavaScript Pet Project - Symptom Search</title>
+
+  <!-- STYLING -->
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header id="header">
+    <h2 id="site-name"><a href="#">SS</a></h2>
+    
+    <!-- NAVIGATION MENU-->
+    <nav id="main-menu">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About COVID</a></li>
+        <li><a href="#">Get Help</a></li>
+        <li><a href="bit.ly/jennysresume">About me</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- SEARCH BOX -->
+  <div class="searchBox">
+    <h1>Symptom Search</h1>
+
+    <div id="searchInput">
+      <input onkeyup="symptom_search()" type="text" placeholder="Search your symptom">
+    </div>
+
+    <div id="buttons">
+      <button id="searchButton" type="submit" id="submit" name="submit">Search</button>
+      <button id="clearButton" type="submit" id="submit" name="submit">Clear</button>
+    </div>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="./scripts.js"></script>
+  
+</body>
+</html>
