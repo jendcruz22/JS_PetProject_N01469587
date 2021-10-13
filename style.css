@@ -64,7 +64,8 @@ a:visited {
 }
 
 #searchInput input {
-  border-radius: 1px solid black;
+  border-radius: 1px solid rgb(59, 59, 59);
+  outline-width: 0; /* This is done in order to not highlight the input text area when it is active */
   width: 500px;
   margin: 20px;
 }
@@ -79,6 +80,26 @@ a:visited {
   margin: 10px;
 }
 
+#listOfSymptoms {
+  list-style-type: none;
+  margin: 10px 100px 0px 100px;
+  padding: 0px;
+}
+
+#listOfSymptoms li a {
+  border: 1px solid #ddd;
+  margin-top: -1px; 
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block
+}
+
+#listOfSymptoms li a:hover:not(.header) {
+  background-color: #eee;
+}
 
 
 

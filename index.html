@@ -20,8 +20,8 @@
     <nav id="main-menu">
       <ul>
         <li><a href="#">Home</a></li>
-        <li><a href="#">About COVID</a></li>
-        <li><a href="#">Get Help</a></li>
+        <li><a href="https://www.cdc.gov/coronavirus/2019-ncov/your-health/about-covid-19.html">About COVID</a></li>
+        <li><a href="https://www.cdc.gov/coronavirus/2019-ncov/if-you-are-sick/steps-when-sick.html">Get Help</a></li>
         <li><a href="bit.ly/jennysresume">About me</a></li>
       </ul>
     </nav>
@@ -32,15 +32,30 @@
     <h1>Symptom Search</h1>
 
     <div id="searchInput">
-      <input onkeyup="symptom_search()" type="text" placeholder="Search your symptom">
+      <input id="userInput" onkeyup="symptom_search()" type="text" placeholder="Search your symptom">
     </div>
 
     <div id="buttons">
-      <button id="searchButton" type="submit" id="submit" name="submit">Search</button>
-      <button id="clearButton" type="submit" id="submit" name="submit">Clear</button>
+      <button id="searchButton" type="submit" value="Show Div" onclick="showSymptom()" name="submit">Search</button>
+      <!-- <button id="clearButton" type="submit" onclick="document.getElementById('userInput').value = ''" name="submit">Clear</button> -->
     </div>
   </div>
 
+  <ul id="listOfSymptoms" class="answer_list">
+    <li value="Show Div" onclick="showSymptomDescription()"><a href="#symptomDescription">Fever</a></li>
+    <li value="Show Div" onclick="showSymptomDescription()"><a href="#symptomDescription">Cough</a></li>
+    <li value="Show Div" onclick="showSymptomDescription()"><a href="#symptomDescription">Cold</a></li>
+    <li value="Show Div" onclick="showSymptomDescription()"><a href="#symptomDescription">Shortness of breath</a></li>
+    <li value="Show Div" onclick="showSymptomDescription()"><a href="#symptomDescription">Fatigue</a></li>
+    <li value="Show Div" onclick="showSymptomDescription()"><a href="#symptomDescription">Muscle</a></li>
+    <li value="Show Div" onclick="showSymptomDescription()"><a href="#symptomDescription">Headache</a></li>
+    <li value="Show Div" onclick="showSymptomDescription()"><a href="#symptomDescription">Loss of taste or smell</a></li>
+  </ul>
+
+  <div id="symptomDescription"  style="display:none;" class="answer_list" >
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum quaerat aut quidem suscipit veritatis nemo eligendi temporibus, porro ratione officiis natus iste! Quia, magnam ipsam. Facilis voluptate dolorum distinctio iusto.</div>
+    </p>
   <!-- SCRIPTS -->
   <script src="./scripts.js"></script>
   
