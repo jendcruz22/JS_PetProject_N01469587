@@ -19,16 +19,30 @@
 
   <!-- HEADER -->
   <header id="header">
-    <h2 id="site-name"><a href="#">SS</a></h2>
-    
-    <nav id="main-menu">
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="https://www.cdc.gov/coronavirus/2019-ncov/your-health/about-covid-19.html">About COVID</a></li>
-        <li><a href="https://www.cdc.gov/coronavirus/2019-ncov/if-you-are-sick/steps-when-sick.html">Get Help</a></li>
-        <li><a href="https://jennysresume.netlify.app/">About me</a></li>
+
+    <!-- Reference: https://www.makeuseof.com/responsive-navigation-bar-using-html-and-css/ -->
+    <nav class="navbar">
+
+      <!-- LOGO -->
+      <div class="logo">SS</div>
+
+      <!-- NAVIGATION MENU -->
+      <ul class="nav-links">
+
+        <!-- USING CHECKBOX HACK -->
+        <input type="checkbox" id="checkbox_toggle" />
+        <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+        
+        <!-- NAVIGATION MENUS -->
+        <div class="menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="https://www.cdc.gov/coronavirus/2019-ncov/your-health/about-covid-19.html">About COVID </a></li>
+          <li><a href="https://www.cdc.gov/coronavirus/2019-ncov/if-you-are-sick/steps-when-sick.html">Get Help</a></li>
+          <li><a href="https://jennysresume.netlify.app/">About Me</a></li>
+        </div>
+
       </ul>
-    </nav>
+      </nav>
   </header>
 
   <!-- SEARCH BOX -->

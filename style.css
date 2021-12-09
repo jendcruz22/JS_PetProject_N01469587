@@ -28,30 +28,95 @@ a:visited {
   color: rgb(2, 0, 128);
 }
 
+li {
+  list-style: none;
+ }
+
 /* TOP NAVIGATION BAR */
-#header {
-  display: flex;  
-  justify-content: space-between;
+.navbar {
+  display: flex;
   align-items: center;
-  width: 100%;
-  white-space: nowrap;
-  border: 1px;
-  background-color: #fff;
-  border-bottom: 2px solid #000;
-}
+  justify-content: space-between;
+  background-color: white;
+  border-bottom: 1px solid black;
+ }
 
-#main-menu {
+ .nav-links a {
+  color: #000;
+ }
+ 
+ .logo {
+  font-size: 32px;
+ }
+ 
+ .menu {
+  display: flex;
+  gap: 1em;
+  font-size: 18px;
+  background-color: white;
+  color: black;
+ }
+
+ .menu li:hover {
+  background-color: white;
+  color: black;
+  border-radius: 5px;
+  transition: 0.3s ease;
+  box-shadow: 0px 15px 20px rgba(14, 15, 14, 0.623);
+ }
+
+ .menu li {
+  padding: 5px 14px;
+ }
+
+ /*RESPONSIVE NAVBAR MENU STARTS*/
+/* CHECKBOX HACK */
+input[type=checkbox]{
+  display: none;
+ } 
+
+ /*HAMBURGER MENU*/
+ .hamburger {
+  display: none;
+  font-size: 24px;
+  user-select: none;
+ }
+
+ /* APPLYING MEDIA QUERIES */
+ @media (max-width: 768px) {
+ .menu { 
+  display:none;
+  position: absolute;
+  border-bottom: 1px solid black;
+  right: 0;
+  left: 0;
+  text-align: center;
+  padding: 16px 0;
+  box-shadow: 0px 15px 20px rgba(14, 15, 14, 0.623);
+ }
+
+ .menu li {
+   color: black;
+ }
+
+ .menu li:hover {
   display: inline-block;
-}
+  transition: 0.3s ease;
+ }
 
-#main-menu li {
-  display: inline !important;
-}
+ .menu li + li {
+  margin-top: 12px;
+ }
 
-#main-menu a {
-  text-decoration: none;
-  padding: 10px;
-}
+ input[type=checkbox]:checked ~ .menu{
+  display: block;
+ }
+
+ .hamburger {
+  display: block;
+ }
+ 
+ }
 
 .searchBox {
   border: 1px solid black;
@@ -86,13 +151,13 @@ a:visited {
   margin: 10px;
   margin: 10px 10px 20px 10px;
   padding: 10px;
-  border: none;
-  background-color: lightgray;
+  border: 1px solid black;
+  background-color: rgb(248, 248, 248);
 }
 
 #searchButton:hover {
-  background-color: darkorchid;
-  color: white;
+  background-color: white;
+  color: black;
   box-shadow: 0px 15px 20px rgba(14, 15, 14, 0.623);
 }
 
