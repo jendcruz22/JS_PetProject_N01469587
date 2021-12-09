@@ -8,6 +8,11 @@
   <!-- STYLING -->
   <link rel="stylesheet" href="./style.css">
 
+  <!-- jQUERY -->
+	<script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+
+  <!-- JAVASCRIPT -->
+  <script src="./scripts.js"></script>
 </head>
 
 <body>
@@ -16,7 +21,6 @@
   <header id="header">
     <h2 id="site-name"><a href="#">SS</a></h2>
     
-    <!-- NAVIGATION MENU-->
     <nav id="main-menu">
       <ul>
         <li><a href="#">Home</a></li>
@@ -28,36 +32,270 @@
   </header>
 
   <!-- SEARCH BOX -->
-  <div class="searchBox">
+  <div class="searchBox" id="searchBox">
     <h1>Symptom Search</h1>
+    <p id="searchDescription">Type your symptom down below to know more about it</p>
 
     <div id="searchInput">
       <input id="userInput" onkeyup="symptom_search()" type="text" placeholder="Search your symptom">
     </div>
-
-    <div id="buttons">
-      <button id="searchButton" type="submit" value="Show Div" onclick="showSymptom()" name="submit">Search</button>
-      <!-- <button id="clearButton" type="submit" onclick="document.getElementById('userInput').value = ''" name="submit">Clear</button> -->
-    </div>
   </div>
 
   <ul id="listOfSymptoms" class="answer_list">
-    <li value="Show Div" onclick="showSymptomDescription()"><a href="#symptomDescription">Fever</a></li>
-    <li value="Show Div" onclick="showSymptomDescription()"><a href="#symptomDescription">Cough</a></li>
-    <li value="Show Div" onclick="showSymptomDescription()"><a href="#symptomDescription">Cold</a></li>
-    <li value="Show Div" onclick="showSymptomDescription()"><a href="#symptomDescription">Shortness of breath</a></li>
-    <li value="Show Div" onclick="showSymptomDescription()"><a href="#symptomDescription">Fatigue</a></li>
-    <li value="Show Div" onclick="showSymptomDescription()"><a href="#symptomDescription">Muscle</a></li>
-    <li value="Show Div" onclick="showSymptomDescription()"><a href="#symptomDescription">Headache</a></li>
-    <li value="Show Div" onclick="showSymptomDescription()"><a href="#symptomDescription">Loss of taste or smell</a></li>
+    <li id="symptom1" class="symptom">Fever or Chills</li>
+    <li id="symptom2" class="symptom">Cough</li>
+    <li id="symptom3" class="symptom">Cold</li>
+    <li id="symptom4" class="symptom">Shortness of breath or difficulty breathing</li>
+    <li id="symptom5" class="symptom">Fatigue</li>
+    <li id="symptom6" class="symptom">Muscle or body aches</li>
+    <li id="symptom7" class="symptom">Headache</li>
+    <li id="symptom8" class="symptom">Loss of taste or smell</li>
+    <li id="symptom9" class="symptom">Sore throat</li>
+    <li id="symptom10" class="symptom">Congestion or runny nose</li>
+    <li id="symptom11" class="symptom">Nausea or vomiting</li>
+    <li id="symptom12" class="symptom">Diarrhea</li>
   </ul>
-
-  <div id="symptomDescription"  style="display:none;" class="answer_list" >
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum quaerat aut quidem suscipit veritatis nemo eligendi temporibus, porro ratione officiis natus iste! Quia, magnam ipsam. Facilis voluptate dolorum distinctio iusto.</div>
-    </p>
-  <!-- SCRIPTS -->
-  <script src="./scripts.js"></script>
   
+  
+  <!-- SYMPTOM DESCRIPTION 1 -->
+  <div id="symptomDescription1" class="symptomDescription"style="display:none;" class="answer_list">
+    <h2>Yes, Fever or chills is a symptom of the COVID-19 virus.</h2>
+    <p><b>More about it:</b></p>
+    <p>
+      Fever is a common symptom of COVID-19. However, not everyone 
+      who develops COVID-19 will experience fever. Some other common 
+      symptoms include cough, fatigue, and loss of smell or taste.
+    </p>
+    <p>
+      Fever causes the body temperature to rise above normal levels. This is part of the body’s immune response to infection.
+    </p>
+    <a href="https://www.medicalnewstoday.com/articles/covid-19-and-fever">Source of information</a>
+  </div>
+  
+  <!-- SYMPTOM DESCRIPTION 2 -->
+  <div id="symptomDescription2" class="symptomDescription" style="display:none;" class="answer_list">
+    <h2>Yes, cough is a symptom of the COVID-19 virus.</h2>
+    <p><b>More about it:</b></p>
+    <p>
+      If you develop a dry cough, it’s very possible that you could simply be dealing with allergies, being inside all day (ahem, working from home), or other environmental factors.
+    </p>
+    <p>
+      But it may also be pointing to COVID-19—so it’s important to pay attention to other signs of the virus, too. According to the Centers for Disease Control and Prevention, those symptoms can include but are not limited to:Fever or chills
+      Cough,
+      Shortness of breath or difficulty breathing,
+      Fatigue,
+      Muscle or body aches,
+      Headache,
+      New loss of taste or smell,
+      Sore throat,
+      Congestion or runny nose,
+      Nausea or vomiting, Diarrhea. 
+    </p>
+    <a href="https://www.prevention.com/health/a31927676/what-does-dry-cough-mean/">Source of information</a>
+  </div>
+  
+  <!-- SYMPTOM DESCRIPTION 3 -->
+  <div id="symptomDescription3" class="symptomDescription" style="display:none;" class="answer_list">
+    <h2>Yes, cold is a symptom of the COVID-19 virus.</h2>
+    <p><b>More about it:</b></p>
+    <p>
+      Colds and COVID-19 have some similarities. Both develop as a result of a respiratory virus, spreading from person to person through droplets that come from the nose and mouth. However, it is important to remember that they are different.
+    </p>
+    <p>
+      A person can develop COVID-19 as a result of contracting the SARS-CoV-2 virus, which is a type of coronavirus. There are fourTrusted Source coronaviruses that most often cause the common cold in humans. SARS-CoV-2, however, causes a different illness.
+    </p>
+    <p>
+      Compared with colds, COVID-19:
+      <ul>
+        <li>has a longerTrusted Source potential incubation period</li>
+        <li>causes more varied symptoms</li>
+        <li>has a higher risk of complications and fatality</li>
+      </ul>
+    </p>
+    <a href="https://www.medicalnewstoday.com/articles/common-cold-vs-covid-19#are-they-similar">Source of information</a>
+  </div>
+  
+  <!-- SYMPTOM DESCRIPTION 4 -->
+  <div id="symptomDescription4" class="symptomDescription" style="display:none;" class="answer_list">
+    <h2>Yes, Shortness of breath or difficulty breathing is a symptom of the COVID-19 virus.</h2>
+    <p><b>More about it:</b></p>
+    <p>
+      The coronavirus that causes COVID-19 attacks the lungs and respiratory system, 
+      sometimes resulting in significant damage. COVID-19 often leads to pneumonia 
+      and even acute respiratory distress syndrome (ARDS), a severe lung injury. 
+      Recovering lung function is possible but can require therapy and exercises 
+      for months after the infection is treated.
+    </p>
+    <a href="https://www.hopkinsmedicine.org/health/conditions-and-diseases/coronavirus/coronavirus-recovery-breathing-exercises">Source of information</a>
+  </div>
+  
+  <!-- SYMPTOM DESCRIPTION 5 -->
+  <div id="symptomDescription5" class="symptomDescription" style="display:none;" class="answer_list">
+    <h2>Yes, fatigue is a symptom of the COVID-19 virus.</h2>
+    <p><b>More about it:</b></p>
+    <p>
+      Even though fatigue is a less well-known symptom of COVID-19, it’s one of the early signs of the 
+      disease and more common than the ‘classic’ symptoms of cough, fever and loss of smell (anosmia).
+    </p>
+    <p>
+    Fatigue in COVID-19 is not the same as normal feelings of being tired or sleepy. It’s a type of 
+    extreme tiredness or feeling ‘wiped out’ that persists despite resting or getting a good night's sleep. 
+    </p>
+    <p>
+    If you have fatigue, you may notice it occurs even after small tasks and limits your usual day-to-day 
+    activity. It can feel difficult to walk up stairs, do normal chores or even to get out of bed. Fatigue related to COVID-19 can also make it hard to concentrate or remember things - people sometimes describe it as having ‘brain fog’.  
+    </p>
+    <p>
+    It’s important to remember that feeling more tired than usual is common when you’re fighting 
+    off any infection, not just coronavirus. And many of us have also seen dramatic changes to our 
+    lives including our routines, how we work, and look after children and older relatives, which may 
+    also affect how tired we feel. So although many people with COVID-19 experience severe tiredness, 
+    most people who feel tired or worn out will not have COVID-19.
+    </p>
+    <a href="https://covid.joinzoe.com/post/covid-symptoms-fatigue-tiredness">Source of information</a>
+  </div>
+  
+  <!-- SYMPTOM DESCRIPTION 6 -->
+  <div id="symptomDescription6" class="symptomDescription" style="display:none;" class="answer_list">
+    <h2>Yes, Muscle or body aches is a symptom of the COVID-19 virus.</h2>
+    <p><b>More about it:</b></p>
+    <p>
+      Unusual muscle pains can be an early symptom of COVID-19, often appearing at the very start of the illness. 
+    </p>
+    <p>
+      Usually, it lasts for an average of two to three days but can take longer to go away the older you are. This is commonly up to four days for children, five days for adults aged 16-35, seven days for adults aged 35-65 and up to eight days for adults over 65. 
+    </p>
+    <p>
+      Unfortunately, COVID-related muscle pains can sometimes last much longer, and are commonly reported in people with long COVID or post-COVID syndrome. 
+    </p>
+    <a href="https://covid.joinzoe.com/post/are-muscle-pains-a-symptom-of-covid-19">Source of information</a>
+  </div>
+
+  <!-- SYMPTOM DESCRIPTION 7 -->
+  <div id="symptomDescription7" class="symptomDescription" style="display:none;" class="answer_list">
+    <h2>Yes, Headache is a symptom of the COVID-19 virus.</h2>
+    <p><b>More about it:</b></p>
+    <p>
+      A headache is a potential symptom of COVID-19. What point in the infection it typically occurs is still being determined.
+    </p>
+    <p>
+      To date, a headache has been reportedTrusted Source both early and late in the infection phase, with a later headache possibly being associated with worsening illness.
+    </p>
+    <p>
+      A headache can also be a symptom of COVID-19 in people with migraine. In these cases, headaches have been reportedTrusted Source as occurring prior to the onset of more typical COVID-19 symptoms, like fever and cough.
+    </p>
+    <a href="https://www.healthline.com/health/is-headache-a-sign-of-coronavirus#headache-as-symptom">Source of information</a>
+  </div>
+
+  <!-- SYMPTOM DESCRIPTION 8 -->
+  <div id="symptomDescription8" class="symptomDescription" style="display:none;" class="answer_list">
+    <h2>Yes, Loss of taste or smell is a symptom of the COVID-19 virus.</h2>
+    <p><b>More about it:</b></p>
+    <p>
+      It’s not uncommon for upper respiratory infections such as the common cold or flu to affect our senses of smell and taste. In fact, it’s estimated that a temporary loss of smell happens in over 60 percentTrusted Source of colds and sinus infections.
+    </p>
+    <p>
+      Your sense of taste and sense of smell are closely linked. In fact, experiencing a loss of smell can greatly impact your sense of taste. It’s estimated that 95 percent of the time when there’s a loss of taste, it’s associated with a reduced sense of smell.
+    </p>
+    <p>
+      Loss of smell can occur suddenly in people with COVID-19 and is often accompanied by loss of taste. Also, with COVID-19, these symptoms may occur without a runny or stuffy nose.
+    </p>
+    <p>
+      It’s possible that a loss of smell or taste could be an early symptom of COVID-19. A recent reviewTrusted Source evaluated eight studies with a total of 11,054 COVID-19 patients. According to this review, a loss of smell and taste often happened prior to other COVID-19 symptoms.
+    </p>
+    <p>
+      In particular, a loss of smell may also be a potential indicator of a mild case of COVID-19. 
+    </p>
+    <a href="https://www.healthline.com/health/coronavirus-loss-of-taste-loss-of-smell#cause">Source of information</a>
+  </div>
+
+  <!-- SYMPTOM DESCRIPTION 9 -->
+  <div id="symptomDescription9" class="symptomDescription" style="display:none;" class="answer_list">
+    <h2>Yes, Sore throat is a symptom of the COVID-19 virus.</h2>
+    <p><b>More about it:</b></p>
+    <p>
+      Even though a sore throat is a less well-known symptom of COVID-19, it’s an early sign of the disease and reasonably common in children and adults up to the age of 65. 
+    </p>
+    <p>
+      People using the app have reported having a sore throat that feels similar to what you might experience during a cold or laryngitis.   
+    </p>
+    <p>
+      COVID-related sore throats tend to be relatively mild and last no more than five days. A very painful sore throat that lasts more than five days may be something else such as a bacterial infection, so don’t be afraid to contact your GP if the problem persists. 
+    </p>
+    <p>
+      It’s important to remember that sore throats are common and caused by lots of respiratory illnesses such as normal colds. So although many people with COVID-19 experience sore throats, most people with a sore throat will not have COVID-19.
+    </p>
+    <a href="https://covid.joinzoe.com/post/covid-symptoms-sore-throat">Source of information</a>
+  </div>
+
+  <!-- SYMPTOM DESCRIPTION 10 -->
+  <div id="symptomDescription10" class="symptomDescription" style="display:none;" class="answer_list">
+    <h2>Yes, congestion or runny nose is a symptom of the COVID-19 virus.</h2>
+    <p><b>More about it:</b></p>
+    <p>
+      A runny nose can be a symptom of COVID-19. The Centers for Disease Control and Prevention (CDC) note that a runny nose can be a symptom of COVID-19 in both childrenTrusted Source and adultsTrusted Source.
+    </p>
+    <p>
+      There are multiple variantsTrusted Source of SARS-CoV-2. According to the Washington State Department of Health, a runny nose is rarely a symptom of COVID-19 that is due to previous variants of the virus, but it can occur.
+    </p>
+    <p>
+      However, according to recent evidence, a runny nose may be a main symptom of COVID-19 that results from the recently discovered delta variant.
+    </p>
+    <a href="https://www.medicalnewstoday.com/articles/runny-nose-and-covid#is-it-a-symptom">Source of information</a>
+  </div>
+
+  <!-- SYMPTOM DESCRIPTION 11 -->
+  <div id="symptomDescription11" class="symptomDescription" style="display:none;" class="answer_list">
+    <h2>Yes, nausea or vomiting is a symptom of the COVID-19 virus.</h2>
+    <p><b>More about it:</b></p>
+    <p>
+      Once any virus infects your body, it can destroy healthy cells and make multiple copies of itself. COVID-19 mainly attacks the cells lining your airways. This makes it hard for you to breathe and can lead to pneumonia. But researchers think the illness also may harm your digestive tract and liver tissue.
+    </p>
+    <p>
+      Lack of appetite is the most common symptom, followed by loss or taste and smell. About 13% experience diarrhea, lasting an average of 5 days.
+    </p>
+    <p>
+      Those with digestive symptoms were more likely to have a positive stool test for the coronavirus, which means they had SARS-CoV-2 RNA in their poop. It also took them longer to clear the virus from their bodies, compared to those without gastrointestinal symptoms.
+    </p>
+    <a href="https://www.webmd.com/lung/covid19-digestive-symptoms#1">Source of information</a>
+  </div>
+
+  <!-- SYMPTOM DESCRIPTION 12 -->
+  <div id="symptomDescription12" class="symptomDescription" style="display:none;" class="answer_list">
+    <h2>Yes, diarrhoea is a symptom of the COVID-19 virus.</h2>
+    <p><b>More about it:</b></p>
+    <p>
+      Even though diarrhoea is a less well-known symptom of COVID-19, it affects a reasonable proportion of people during their illness. 
+    </p>
+    <p>
+      Having COVID-19 diarrhoea alongside many other symptoms is associated with an increased risk of needing hospital support.
+    </p>
+    <p>
+      Diarrhoea caused by COVID-19 is similar to the upset tummy you might get from a regular stomach bug, such as rotavirus or norovirus. Diarrhoea is common in children and adults and usually clears up by itself. 
+    </p>
+    <p>
+      We think COVID-19 causes diarrhoea because the virus can invade cells in the gut and disrupt its normal function. 
+    </p>
+    <p>
+      COVID-19 can be transmitted through poo and contaminated surfaces or hands. It’s critically important to wash your hands thoroughly and regularly clean bathrooms if you, anyone you live with, or someone you’re caring for has diarrhoea, to prevent the infection spreading. 
+    </p>
+    <a href="https://covid.joinzoe.com/post/covid-symptoms-diarrhoea">Source of information</a>
+  </div>
+
+  <div id="buttons">
+    <button id="searchButton">Search More</button>
+  </div>
+
+  <div class="disclaimer">
+    <h2>Disclaimer</h2>
+    <p>
+      This list <b>does not include all possible symptoms</b> for COVID-19. 
+      Most of the information has been taken from the <a href="https://www.cdc.gov/">
+      Centers for Disease Control and Prevention</a> (CDCP) website. If you're 
+      feeling ill, suspect that you have the COVID-19 virus or 
+      have been in contact with anyone recently that has contracted 
+      the virus, kindly visit the CDCP for more information.
+    </p>
+  </div>
 </body>
 </html>
