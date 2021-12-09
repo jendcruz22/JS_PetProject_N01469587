@@ -1,0 +1,217 @@
+/* GOOGLE FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+body {
+	font-family: 'Ubuntu', sans-serif;
+	line-height: 1.5;
+	margin: 0px 30px 30px 30px;
+}
+
+h1,
+h2,
+h3 {
+	text-align: center;
+}
+
+a {
+	text-decoration: none;
+	color: purple;
+}
+
+a:hover {
+	color: violet;
+}
+
+a:active {
+	color: darkorchid;
+}
+
+a:visited {
+	color: rgb(2, 0, 128);
+}
+
+li {
+	list-style: none;
+}
+
+
+/* TOP NAVIGATION BAR */
+
+.navbar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: #fff;
+	border-bottom: 1px solid #000;
+}
+
+.nav-links a {
+	color: #000;
+}
+
+.logo {
+	font-size: 32px;
+}
+
+.menu {
+	display: flex;
+	gap: 1em;
+	font-size: 18px;
+	background-color: #fff;
+	color: #000;
+}
+
+.menu li {
+	padding: 5px 14px;
+  display: block !important;
+}
+
+.menu li:hover {
+	background-color: #fff;
+	color: #000;
+	border-radius: 5px;
+	font-size: 20px;
+	transition: 0.3s ease;
+}
+
+/*RESPONSIVE NAVBAR MENU STARTS*/
+/* CHECKBOX HACK */
+input[type=checkbox] {
+	display: none;
+}
+
+
+/*HAMBURGER MENU*/
+
+.hamburger {
+	display: none;
+	font-size: 24px;
+	user-select: none;
+}
+
+
+/* APPLYING MEDIA QUERIES */
+
+@media (max-width: 768px) {
+	.menu {
+		display: none;
+		position: absolute;
+		border-bottom: 1px solid #000;
+		right: 0;
+		left: 0;
+		text-align: center;
+		padding: 16px 0;
+		box-shadow: 0px 15px 20px rgba(14, 15, 14, 0.623);
+	}
+	.menu li {
+		color: #000;
+	}
+	.menu li:hover {
+		display: inline-block;
+		transition: 0.3s ease;
+	}
+	.menu li+li {
+		margin-top: 12px;
+	}
+	input[type=checkbox]:checked~.menu {
+		display: block;
+	}
+	.hamburger {
+		display: block;
+	}
+}
+
+.searchBox {
+	border: 1px solid #000;
+	margin-top: 10px;
+}
+
+#searchDescription {
+	text-align: center;
+}
+
+#searchInput {
+	display: flex;
+	justify-content: center;
+}
+
+#searchInput input {
+	outline-width: 0;
+	width: 500px;
+	margin: 10px 10px 20px 10px;
+	padding: 10px;
+}
+
+#buttons {
+	display: flex;
+	justify-content: center;
+}
+
+#searchButton {
+	display: none;
+	padding: 5px;
+	margin: 10px;
+	margin: 10px 10px 20px 10px;
+	padding: 10px;
+	border: 1px solid #000;
+	background-color: rgb(248, 248, 248);
+}
+
+#searchButton:hover {
+	background-color: #fff;
+	color: #000;
+	box-shadow: 0px 15px 20px rgba(14, 15, 14, 0.623);
+}
+
+#listOfSymptoms {
+	list-style-type: none;
+	margin: 10px 100px 0px 100px;
+	padding: 0px;
+	text-align: center;
+}
+
+#listOfSymptoms li {
+	border: 1px solid #ddd;
+	margin-top: -1px;
+	background-color: #f6f6f6;
+	padding: 12px;
+	text-decoration: none;
+	font-size: 18px;
+	color: #000;
+	display: block
+}
+
+#listOfSymptoms li:hover:not(.header) {
+	background-color: #eee;
+}
+
+.symptomDescription {
+	display: none;
+}
+
+.disclaimer {
+	margin: 10px 0px 10px 0px;
+	border: solid 1px lightgray;
+	color: grey;
+	padding: 10px;
+}
+
+.disclaimer h2 {
+	font-size: 20px;
+	padding: 0px;
+	margin: 0px;
+}
+
+
+/* RESPONSIVE CSS */
+
+@media only screen and (min-width: 600px) {
+	.searchBox {
+		margin: 10px 0px 20px 0px;
+		width: 100%;
+	}
+	#listOfSymptoms {
+		width: 100%;
+		margin: 0px;
+	}
+}
