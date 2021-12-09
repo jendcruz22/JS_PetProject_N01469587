@@ -86,11 +86,36 @@ jQuery(document).ready(function () {
     $("#symptom12").click(function(){
         showSymptomDescription(id=12);
     })
+    
+    $("#symptom13").click(function(){
+        showSymptomDescription(id=13);
+    })
+    
+    $("#symptom14").click(function(){
+        showSymptomDescription(id=14);
+    })
+    
+    $("#symptom15").click(function(){
+        showSymptomDescription(id=15);
+    })
+    
+    $("#symptom16").click(function(){
+        showSymptomDescription(id=16);
+    })
+    
+    $("#symptom17").click(function(){
+        showSymptomDescription(id=17);
+    })
+    
+    $("#symptom18").click(function(){
+        showSymptomDescription(id=18);
+    })
 
     $("#searchButton").click(function(){
         document.getElementById('searchBox').style.display = "block";
         document.getElementById('listOfSymptoms').style.display = "block";
         document.getElementById('symptomDescription'+id).style.display = "none";
         document.getElementById('searchButton').style.display = "none";
+        window.location.reload();
     })
 });

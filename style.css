@@ -110,6 +110,10 @@ a:visited {
   background-color: #eee;
 }
 
+.symptomDescription {
+  display: none;
+}
+
 .disclaimer {
   margin: 10px 0px 10px 0px;
   border: solid 1px lightgray;
