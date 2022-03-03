@@ -39,77 +39,96 @@ function showSymptomDescription(id) {
 }
 
 jQuery(document).ready(function () {
+    
     $("#symptom1").click(function(){
-        showSymptomDescription(id=1);
+        id = 1;
+        showSymptomDescription(id);
     })
 
     $("#symptom2").click(function(){
-        showSymptomDescription(id=2);
+        id = 2;
+        showSymptomDescription(id);
     })
 
     $("#symptom3").click(function(){
-        showSymptomDescription(id=3);
+        id = 3;
+        showSymptomDescription(id);
     })
 
     $("#symptom4").click(function(){
-        showSymptomDescription(id=4);
+        id = 4;
+        showSymptomDescription(id);
     })
 
     $("#symptom5").click(function(){
-        showSymptomDescription(id=5);
+        id = 5;
+        showSymptomDescription(id);
     })
 
     $("#symptom6").click(function(){
-        showSymptomDescription(id=6);
+        id = 6;
+        showSymptomDescription(id);
     })
 
     $("#symptom7").click(function(){
-        showSymptomDescription(id=7);
+        id = 7;
+        showSymptomDescription(id);
     })
 
     $("#symptom8").click(function(){
-        showSymptomDescription(id=8);
+        id = 8;
+        showSymptomDescription(id);
     })
 
     $("#symptom9").click(function(){
-        showSymptomDescription(id=9);
+        id = 9;
+        showSymptomDescription(id);
     })
 
     $("#symptom10").click(function(){
-        showSymptomDescription(id=10);
+        id = 10;
+        showSymptomDescription(id);
     })
 
     $("#symptom11").click(function(){
-        showSymptomDescription(id=11);
+        id = 11;
+        showSymptomDescription(id);
     })
 
     $("#symptom12").click(function(){
-        showSymptomDescription(id=12);
+        id = 12;
+        showSymptomDescription(id);
     })
     
     $("#symptom13").click(function(){
-        showSymptomDescription(id=13);
+        id = 13;
+        showSymptomDescription(id);
     })
     
     $("#symptom14").click(function(){
-        showSymptomDescription(id=14);
+        id = 14;
+        showSymptomDescription(id);
     })
     
     $("#symptom15").click(function(){
-        showSymptomDescription(id=15);
+        id = 15;
+        showSymptomDescription(id);
     })
     
     $("#symptom16").click(function(){
-        showSymptomDescription(id=16);
+        id = 16;
+        showSymptomDescription(id);
     })
     
     $("#symptom17").click(function(){
-        showSymptomDescription(id=17);
+        id = 17;
+        showSymptomDescription(id);
     })
     
     $("#symptom18").click(function(){
-        showSymptomDescription(id=18);
-    })
+        id = 18;
+        showSymptomDescription(id);
+    });
 
     $("#searchButton").click(function(){
         document.getElementById('searchBox').style.display = "block";
