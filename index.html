@@ -43,7 +43,7 @@
          <h1>Symptom Search</h1>
          <p id="searchDescription">Type your symptom down below to know more about it</p>
          <div id="searchInput">
-            <input id="userInput" onkeyup="symptom_search()" type="text" placeholder="Search your symptom">
+            <input id="userInput" onkeyup="symptomSearch()" type="text" placeholder="Search your symptom">
          </div>
       </div>
       <!-- LIST OF ALL THE SYMPTOMS -->
@@ -67,6 +67,14 @@
          <li id="symptom17" class="symptom">Rash</li>
          <li id="symptom18" class="symptom">Bleeding</li>
       </ul>
+
+      <div id="buttons">
+         <button id="infoButton" onclick="displayInfoMsg()">Can't find your symptom?</button>
+      </div>
+
+      <div id="infoMsgDiv">
+         <p id="infoMsg"></p>
+      </div>
 
       <!-- DESCRIPTION OF EVERY SYMPTOM -->
       <!-- SYMPTOM DESCRIPTION 1 -->

@@ -189,6 +189,15 @@ input[type=checkbox] {
 	display: none;
 }
 
+#infoButton, #infoMsgDiv {
+	display: none;
+}
+
+.emgStyle {
+	color: red;
+	font-weight: bold;
+}
+
 .disclaimer {
 	margin: 10px 0px 10px 0px;
 	border: solid 1px lightgray;

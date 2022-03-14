@@ -1,6 +1,5 @@
 // SYMPTOM SEARCH FUNCTION TO SEARCH FOR THE VALUE THAT THE USER HAS ENTERED
-// Reference: https://www.geeksforgeeks.org/search-bar-using-html-css-and-javascript/
-function symptom_search() {
+function symptomSearch() {
 
     var input, filter, arrayOfSymptoms, i, txtValue;
     
@@ -26,8 +25,16 @@ function symptom_search() {
         // IF THE SUBSTRING DOES NOT EXISTS IN OUR LIST OF SYMPTOMS, THAT PARTICULAR SYMPTOM WILL NOT BE DISPLAYED
         else {
             arrayOfSymptoms[i].style.display = "none";
+            document.getElementById("infoButton").style.display = "block";
         }
+        
     }    
+}
+
+// FUNCTION TO DISPLAY THE INFORMATIONAL MESSAGE
+function displayInfoMsg(){
+    document.getElementById("infoMsgDiv").style.display = "block";
+    document.getElementById("infoMsg").innerHTML = "If this is an emergency, <span class='emgStyle'>CALL 911!</span> <br> Symptom not found. <br> Visit the <a href='https://www.cdc.gov/coronavirus/2019-ncov/your-health/about-covid-19.html'>CDC website</a> to learn more about COVID-19.";
 }
  
 // FUNCTION TO DISPLAY A PARTICULAR SYMPTOM'S DESCRIPTION
@@ -39,7 +46,7 @@ function showSymptomDescription(id) {
 }
 
 jQuery(document).ready(function () {
-    
+
     $("#symptom1").click(function(){
         id = 1;
         showSymptomDescription(id);
