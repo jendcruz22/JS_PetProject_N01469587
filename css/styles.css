@@ -148,7 +148,6 @@ input[type=checkbox] {
 }
 
 #searchButton {
-	display: none;
 	padding: 5px;
 	margin: 10px;
 	margin: 10px 10px 20px 10px;
@@ -189,7 +188,7 @@ input[type=checkbox] {
 	display: none;
 }
 
-#infoButton, #infoMsgDiv {
+ #infoMsgDiv {
 	display: none;
 }
 
