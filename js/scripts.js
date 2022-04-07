@@ -1,6 +1,7 @@
 // VARIABLES
 var input, results, i;
 
+// OBJECT OF AN ARRAY OF SYMPTOM OBJECTS
 let objs = {
     symptoms: [
         {   
@@ -104,47 +105,60 @@ let objs = {
 
 // FUNCTION TO REMOVE SPACES BETWEEN WORDS AND CONVERT IT TO LOWER CASE
 function processVal(input) {
-    input  = input.toLowerCase().replace(' ', '');
+    input  = input.toLowerCase().replace(/\s/g, '');
     return input;
 }
 
 // FUNCTION TO CHECK IF INPUT IS VALID
 function checkInput(input) {
-    if(input === '') {
-        return false;
+    var output;
+    var regEx = /\d/.test(input);
+
+    if(input === "") {
+        output = "Empty string";
+    }
+    else if (regEx === true) {
+        output = "Not a string";
     }
     else {
-        return true;
+        output = "Valid";
     }
+    
+    return output;
 }
 
+// FUNCTION TO CHECK IF GIVEN INPUT EXISTS. IF YES, IT RETURNS THE NECESSARY DATA
 function checkIfExists(input) {
     results = [];
-    if (checkInput(input) === false) {
-        return false;
+
+    // FOR LOOP TO GO THROUGH EVERY VALUE IN THE OBJECT
+    for (i = 0; i < Object.keys(objs.symptoms).length; i++){
+
+        // IF A GIVEN STRING CONSISTS IN THE SYMPTOM OBJECT'S NAME, ADD AN OBJECT CONSISTING OF IT'S PROPERTIES TO THE ARRAY
+        if (processVal(objs.symptoms[i].name).includes(processVal(input))){
+            results.push({name:objs.symptoms[i].name, isOrNot:objs.symptoms[i].isOrNot, description:objs.symptoms[i].description, url:objs.symptoms[i].url});
+        }
+        
+        // ELSE PUSH A BOOLEAN FALSE VALUE
+        else {
+            results.push(false);
+        }
     }
-    else {
+    
+    // LOOP THROUGH THE RESULTS ARRAY
+    for(i = 0; i<results.length; i++){
 
-        for (i = 0; i < Object.keys(objs.symptoms).length; i++){
-            if (processVal(objs.symptoms[i].name).includes(processVal(input))){
-                results.push({name:objs.symptoms[i].name, isOrNot:objs.symptoms[i].isOrNot, description:objs.symptoms[i].description, url:objs.symptoms[i].url});
-            }
-            
-            else {
-                results.push(false);
-            }
+        // IF THE VALUE AT ANY POINT IN THE RESULTS ARRAY IS THE BOOLEAN VALUE 'false' THEN CONTINUE
+        if(results[i] === false){
+            continue;
         }
+        // ELSE RETURN OBJECT
+        else {
+            return (results);
+        }
+    }
+    return "Inexistent";   
 
-        for(i = 0; i<results.length; i++){
-            if(results[i] === false){
-                continue;
-            }
-            else {
-                return (results);
-            }
-        }
-        return "Inexistent";   
-    }   
 }
 
 // WINDOW ON LOAD FUNCTION
@@ -156,36 +170,52 @@ window.onload = function () {
         // GET USER INPUT
         input = document.getElementById("userInput");
 
-        // CHECK IF THE VALUE EXISTS IN THE SYSTEM
-        val = checkIfExists(input.value);
+        var checkIp = checkInput(input.value);
 
-        // IF THE INPUT IS INVALID
-        if (val === false) {
-            document.getElementById("infoMsgDiv").style.display = "block";
-            document.getElementById("infoMsg").style.color = "red";
-            document.getElementById("infoMsg").innerHTML = "Invalid output";
+        if (checkIp === "Valid") {
+            // CHECK IF THE VALUE EXISTS IN THE SYSTEM
+            val = checkIfExists(input.value);
+            console.log(val);
+
+            // IF THE VALUE DOESN'T EXIST IN THE SYSTEM, LET THEM KNOW
+            if (val === "Inexistent"){
+                document.getElementById("infoMsgDiv").style.display = "block";
+                document.getElementById("infoMsg").style.color = "red";
+                document.getElementById("infoMsg").innerHTML = "Symptom does not exist in our system. Contact 911 in case of emergency.";
+            }
+
+            else {
+                for(i = 0; i < val.length; i++){
+                    if (val[i] === false) {
+                        continue;
+                    }
+                    else {
+                        document.getElementById("symptomDescription").style.display = "block";
+                        document.getElementById("yon").innerHTML = val[i].name;
+                        document.getElementById("sympDesc").innerHTML = val[i].description;
+                        document.getElementById("soi").href = val[i].url;
+                    }
+                }
+            } 
         }
 
-        // IF THE VALUE DOESN'T EXIST IN THE SYSTEM, LET THEM KNOW
-        else if (val === "Inexistent"){
+        else if ( checkIp === "Not a string") {
             document.getElementById("infoMsgDiv").style.display = "block";
             document.getElementById("infoMsg").style.color = "red";
-            document.getElementById("infoMsg").innerHTML = "Symptom does not exist in our system. Contact 911 in case of emergency.";
+            document.getElementById("infoMsg").innerHTML = "Invalid input";
         }
 
         // ELSE DISPLAY THE VALUE
+        else if ( checkIp === 'Empty string') {
+            document.getElementById("infoMsgDiv").style.display = "block";
+            document.getElementById("infoMsg").style.color = "red";
+            document.getElementById("infoMsg").innerHTML = "Please enter a valid symptom in the search bar above.";              
+        }
+
         else {
-            for(i = 0; i < val.length; i++){
-                if (val[i] === false) {
-                    continue;
-                }
-                else {
-                    document.getElementById("symptomDescription").style.display = "block";
-                    document.getElementById("yon").innerHTML = val[i].name;
-                    document.getElementById("sympDesc").innerHTML = val[i].description;
-                    document.getElementById("soi").href = val[i].url;
-                }
-            }
+            document.getElementById("infoMsgDiv").style.display = "block";
+            document.getElementById("infoMsg").style.color = "red";
+            document.getElementById("infoMsg").innerHTML = "Error! Refresh the page and try again";    
         }
         return false;
     }
