@@ -118,7 +118,7 @@ function checkInput(input) {
         output = "Empty string";
     }
     else if (regEx === true) {
-        output = "Not a string";
+        output = "Input consists of a number. Please try again.";
     }
     else {
         output = "Valid";
@@ -194,12 +194,13 @@ window.onload = function () {
                         document.getElementById("yon").innerHTML = val[i].name;
                         document.getElementById("sympDesc").innerHTML = val[i].description;
                         document.getElementById("soi").href = val[i].url;
+                        document.getElementById("soi").innerHTML = "Source of information: "+val[i].url;
                     }
                 }
             } 
         }
 
-        else if ( checkIp === "Not a string") {
+        else if ( checkIp === "Input consists of a number. Please try again.") {
             document.getElementById("infoMsgDiv").style.display = "block";
             document.getElementById("infoMsg").style.color = "red";
             document.getElementById("infoMsg").innerHTML = "Invalid input";

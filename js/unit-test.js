@@ -1,5 +1,5 @@
 // VARIABLES
-var results, i;
+var input, results, i;
 
 // OBJECT OF AN ARRAY OF SYMPTOM OBJECTS
 let objs = {
@@ -126,7 +126,7 @@ function testProcessVal(input, expRes) {
         outputVal = "xxFAILEDxx";
     }
 
-    let opString = "Value tested: "+input+"  Expected result: "+expRes+" <span style='color: "+outputCol+"'>"+outputVal+"<br />";
+    let opString = "Value tested: "+input+"  | Expected result: "+expRes+" <span style='color: "+outputCol+"'>"+outputVal+"<br />";
     let msg = document.getElementById("test1resOp");
     msg.innerHTML +=opString;
 }
@@ -137,19 +137,18 @@ testProcessVal("My HUMBER ID is..... N1046987766", "myhumberidis.....n1046987766
 // ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 /** checkInput Function
  * This function checks if a given input value is anything but a string.
- * Returns 'Empty string' if a given input is an empty string, 'Not a string' if the input is a number or a string with numbers, and 'Valid' if the given string is valid.
+ * Returns 'Empty string' if a given input is an empty string, 'Input consists of a number. Please try again.' if the input is a number or a string with numbers, and 'Valid' if the given string is valid.
  * @param {string} input
  */
  // FUNCTION TO CHECK IF INPUT IS VALID
  function checkInput(input) {
     var output;
     var regEx = /\d/.test(input);
-    console.log(regEx);
     if(input === "") {
         output = "Empty string";
     }
     else if (regEx === true) {
-        output = "Not a string";
+        output = "Input consists of a number. Please try again.";
     }
     else {
         output = "Valid";
@@ -170,21 +169,21 @@ function testCheckInput(input, expRes){
         outputVal = "xxFAILEDxx";
     }
 
-    let opString = "Value tested: "+input+"  Expected result: "+expRes+" <span style='color: "+outputCol+"'>"+outputVal+"<br />";
+    let opString = "Value tested: "+input+"  | Expected result: "+expRes+" <span style='color: "+outputCol+"'>"+outputVal+"<br />";
     let msg = document.getElementById("test2resOp");
     msg.innerHTML +=opString;
 
 }
 
-testCheckInput(123, 'Not a string');
+testCheckInput(123, 'Input consists of a number. Please try again.');
 testCheckInput('', 'Empty string');
-testCheckInput('Hello123@', 'Not a string');
+testCheckInput('Hello123@', 'Input consists of a number. Please try again.');
 testCheckInput('This IS A test stringgggggggg', 'Valid');
 
 // ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 /** checkIfExists Function
  * This function checks if a given input value is anything but a string.
- * Returns 'Empty string' if a given input is an empty string, 'Not a string' if the input is anything but a string, and 'Valid' if the given string is valid.
+ * Returns 'Empty string' if a given input is an empty string, 'Input consists of a number. Please try again.' if the input is anything but a string, and 'Valid' if the given string is valid.
  * @param {string} input
  */
 // FUNCTION TO CHECK IF GIVEN INPUT EXISTS. IF YES, IT RETURNS THE NECESSARY DATA
@@ -226,19 +225,28 @@ function checkIfExists(input) {
 function testCheckIfExists(input, expRes) {
     var result = checkIfExists(input);
 
-    if(result === expRes) {
+    if ((expRes === result) && (result === "Inexistent")){
         outputCol = "green";
         outputVal = "==PASSED==";
-    }
+    } 
     else {
-        outputCol = "red";
-        outputVal = "xxFAILEDxx";
+        for(var i = 0; i < Object.keys(result).length; i++){
+            if(result[i].name === expRes){
+                outputCol = "green";
+                outputVal = "==PASSED==";
+                break;
+            }
+            else {
+                outputCol = "red";
+                outputVal = "xxFAILEDxx";
+            }
+        }
     }
 
-    let opString = "Value tested: "+input+"  Expected result: "+expRes+" <span style='color: "+outputCol+"'>"+outputVal+"<br />";
+    let opString = "Value tested: "+input+"  | Expected result: "+expRes+" <span style='color: "+outputCol+"'>"+outputVal+"<br />";
     let msg = document.getElementById("test3resOp");
     msg.innerHTML +=opString;
 }
 
-// testCheckIfExists("Cold", )
+testCheckIfExists("Cold", "Cold");
 testCheckIfExists("Vomitting", "Inexistent");
