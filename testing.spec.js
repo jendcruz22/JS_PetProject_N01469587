@@ -3,38 +3,7 @@ describe('Security Assignement 3', ()=>{
     it('When initialized, the page should load the home page.', ()=>{
         cy.visit('/')
     })
-
-    // CLICKING ON THE HOME BUTTON SHOULD LOAD THE HOME PAGE.
-    it('Clicking on the home button should load the home page', ()=>{
-        cy.get("#home").click()
-
-    })
-
-    // CLICKING ON THE LOGO SHOULD LOAD THE HOME PAGE.
-    it('Clicking on the logo should load the home page.', ()=>{
-        cy.get("#logo").click()
-    })
-
-    // CLICKING ON ABOUT COVID SHOULD REDIRECT THE USER TO THE CDC WEBSITE.
-    // it('Clicking on "About COVID" should redirect the user to the CDC website.',()=>{
-    //     cy.get('#aboutCovid').click()
-    //     cy.location('https://www.cdc.gov/coronavirus/2019-ncov/your-health/about-covid-19.html')
-    //     cy.go('back')
-    // })
-
-    // CLICKING ON GET HELP SHOULD REDIRECT THE USER TO THE CDC WEBSITE.
-    // it('Clicking on "Get help" should redirect the user to the CDC website.', ()=>{
-    //     cy.get('#getHelp').click()
-    //     cy.location('https://www.cdc.gov/coronavirus/2019-ncov/if-you-are-sick/steps-when-sick.html')
-        
-    // })
-
-    // CLICKING ON ABOUT ME SHOULD REDIRECT THE USER TO JENNY'S PORTFOLIO WEBSITE.
-    // it('Clicking on "About me" should redirect the user to Jennys portfolio website.', ()=>{
-    //     cy.get('#aboutMe').click()
-    //     cy.location('https://jennysresume.netlify.app/')
-    // })
-
+    
     describe("Test to pass", ()=>{
         // THE SEARCH BAR SHOULD ACCEPT A STRING AS THE INPUT.
         it('The search bar should accept a string as the input.', ()=>{
